@@ -1,13 +1,20 @@
-// if you checked "fancy-settings" in extensionizr.com, uncomment this lines
-
-// var settings = new Store("settings", {
-//     "sample_setting": "This is how you use Store.js to remember values"
-// });
-
-
-//example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
-    sendResponse();
-  });
+// Set up the context menus
+chrome.contextMenus.create({
+"title": "Buzz This",
+"contexts": ["page", "selection", "image", "link"],
+"onclick" : function(e) {
+  var url = e.pageUrl;
+  var buzzPostUrl = "http://mobile.local/search?q=";
+  
+  if (e.selectionText) {
+    // The user selected some text, put this in the message.
+    buzzPostUrl += encodeURI(e.selectionText)
+  }
+ 
+  buzzPostUrl += "&ref=" + encodeURI(url);
+  
+  // Open the page up.
+   chrome.tabs.create(
+      {"url" : buzzPostUrl });
+}
+});
