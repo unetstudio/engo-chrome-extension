@@ -11,7 +11,6 @@ chrome.contextMenus.create({
         }
 
         createURL += "&ref=" + encodeURI(url);
-        chrome.tabs.create(
-            {"url": createURL});
+        chrome.tabs.create({"url": createURL});
     }
 });
