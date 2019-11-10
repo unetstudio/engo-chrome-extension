@@ -1,144 +1,32 @@
 <!doctype html>
-<style type="text/css">
-	div.sep {
-    height: 1px;
-    background-color: #eee;
-    margin: 4px 10px;
-}
-h1 {
-	padding: 0 25px;
-    color: #32325d;
-}
-body {
-    width: 310px;
-    color: #303030;
-    font-size: 12px;
-    margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    letter-spacing: -.1px
-}
-
-ul {
-    padding: 0;
-    margin: 0
-}
-
-ul.vertical {
-    padding: 0
-}
-
-ul.horizontal li a {
-    margin: 0 10px;
-    padding: 2px 0;
-    border-radius: 2px
-}
-
-ul.horizontal li a span {
-    display: inline-block;
-    float: none
-}
-
-ul li {
-    list-style: none;
-    margin: 2px 0
-}
-
-ul li:last-child {
-    margin-bottom: 4px
-}
-
-ul li a {
-    color: #303030;
-    text-decoration: none;
-    display: block;
-    padding: 2px 10px;
-    line-height: 24px;
-    font-size: 13px
-}
-
-ul li a.disabled {
-    color: #909090
-}
-
-ul li a.disabled:hover {
-    background-color: #eceff5;
-    color: #909090
-}
-
-ul li a i {
-    font-size: 14px!important;
-    color: #477ce4;
-    margin: 0 8px 0 4px
-}
-
-ul li a:hover {
-    background-color: #eceff5;
-    color: #000;
-    cursor: pointer
-}
-a#option span {
-    background-position: -128px 0;
-}
-ul.horizontal li a span {
-    display: inline-block;
-    float: none;
-}
-a span {
-    background-size: 192px 16px;
-    background-image: url(../images/icon_popup.png);
-    margin: 0 10px 0 5px;
-    float: left;
-    width: 16px;
-    height: 16px;
-    margin: 0 5px;
-    position: relative;
-    top: 4px;
-}
-#moreLinks {
-	height: 35px;
-}
-#moreLinks li {
-    width: 50%;
-    float: left
-}
-.aws-account {
-    text-align: center;
-    padding: 2px 10px;
-    background: #f5f5f5;
-    border-top: 1px solid #e5e5e5
-}
-
-.aws-login {
-    line-height: 30px;
-    display: none
-}
-
-.aws-login a {
-    font-size: 12px;
-    color: #5794ff;
-    text-decoration: none
-}
-
-a#record-video span {
-    background-position: -96px 0;
-}
-a#my-videos span {
-    background-position: -112px 0;
-}
-a#option span {
-    background-position: -128px 0;
-}
-a#help span {
-    background-position: -144px 0;
-}
-</style>
-
+<head>
+    <title>Engo Dictionary</title>
+    <link rel="stylesheet" href="../inject/inject.css">
+    <script type="text/javascript" src="../inject/inject.js"></script>
+</head>
 <body>
-	<div id="mainPopup">
-<h1>Hello extensionizr!</h1>
-<ul class="vertical"><li><a id="record-video" class="title" title=""><span></span>Record Screen</a></li><li><a id="my-videos" class="title" title=""><span></span>My Recordings</a></li></ul>
-<div class="sep"></div>
-<ul id="moreLinks" class="clearfloat horizontal"><li><a id="option"><span></span>Options</a></li><li><a id="help"><span></span>Send Feedback</a></li></ul>
-<div class="aws-account"><div class="aws-login" style="display: block;"><a href="#" id="aws-login">Sign in to upload and share images quickly</a></div><div class="aws-info" style="display: none;"><div class="aws-user"><span class="user-name"></span> <a id="aws-info-upgrade" target="_blank" class="aws-upgrade" style="display: none;">upgrade</a> <span class="aws-premium-icon shine-effect" title="Premium user" style="display: none;"></span> <a href="#" class="aws-log-out" id="log-out">Log out</a></div><ul class="clearfloat"><li><a id="my-project"><span></span>My Projects</a></li><li><a id="my-account"><span></span>Account</a></li></ul></div></div>
+<div id="mainPopup">
+    <h1>Engo Dictionary</h1>
+    <ul class="vertical">
+        <li><a id="create-all" class="title" title="Capture entire page">
+            <span></span>Capture entire page</a>
+        </li>
+        <li><a id="create-select" class="title" title="Capture selected text">
+            <span></span>Capture selected text</a>
+        </li>
+    </ul>
+    <div class="divider"></div>
+    <ul id="options" class="clearfloat horizontal">
+        <li>
+            <a id="feedback" class="link" href="https://chrome.google.com/webstore/category/extensions" title="Send Feedback">
+                <span></span>Send Feedback
+            </a>
+        </li>
+    </ul>
+    <div class="link-account">
+        <div class="link-login" style="display: block;">
+            <a id="link-login" class="link" href="https://engo.pro/app" title="Sign in to the Engo">Sign in to create dictionary</a>
+        </div>
+    </div>
 </div>
 </body>

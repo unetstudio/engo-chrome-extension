@@ -1,9 +1,9 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
-  "version": "0.0.1",
+  "name": "Engo Dictionary",
+  "version": "1.0.0",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "Capture text for create dictionary in the https://engo.pro",
+  "homepage_url": "https://engo.pro",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -16,7 +16,7 @@
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "browser action demo",
+    "default_title": "Engo: Dictionary",
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [

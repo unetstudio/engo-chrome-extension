@@ -1,13 +1,15 @@
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
-
-		// ----------------------------------------------------------
-		// This part of the script triggers when page is done loading
-		console.log("Hello. This message was sent from scripts/inject.js");
-		// ----------------------------------------------------------
-
-	}
-	}, 10);
+document.addEventListener('DOMContentLoaded', function () {
+    var links = document.getElementsByClassName("link");
+    for (var i = 0; i < links.length; i++) {
+        (function () {
+            var ln = links[i];
+            var location = ln.href;
+            console.log('location', location);
+            ln.onclick = function () {
+                if (location !== undefined && location !== '') {
+                    chrome.tabs.create({active: true, url: location});
+                }
+            };
+        })();
+    }
 });
