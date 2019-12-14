@@ -28,54 +28,32 @@ function getCurrentTabUrl(callback) {
     });
 }
 
-function getSelectedText(callback) {
+function getSelectionText(callback) {
     chrome.tabs.executeScript({
         code: "window.getSelection().toString();"
     }, function (selection) {
-        callback(selection[0])
-    });
-}
-
-function getAllText(callback) {
-    chrome.tabs.executeScript({
-        code: "document.body.innerText"
-    }, function (text) {
-        callback(text)
+        if (selection !== null && selection !== undefined && selection.length) {
+            callback(selection[0])
+        }
     });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     let createSelect = document.getElementById('create-select');
-    let createAll = document.getElementById('create-all');
 
     createSelect.onclick = function () {
         getCurrentTabUrl(function (url) {
             let host = new URL(url);
             url = host.hostname;
 
-            getSelectedText(function (selectedText) {
-                if (selectedText) {
-                    createURL += encodeURI(selectedText)
+            getSelectionText(function (selectionText) {
+                if (selectionText) {
+                    createURL += encodeURI(selectionText)
+                    createURL += "&ref=" + encodeURI(url);
+                    chrome.tabs.create({"url": createURL});
+                } else {
+                    alert('Không có văn bản nào được chọn!')
                 }
-
-                createURL += "&ref=" + encodeURI(url);
-                chrome.tabs.create({"url": createURL});
-            })
-        })
-    };
-
-    createAll.onclick = function () {
-        getCurrentTabUrl(function (url) {
-            let host = new URL(url);
-            url = host.hostname;
-
-            getAllText(function (allText) {
-                if (allText) {
-                    createURL += encodeURI(allText)
-                }
-
-                createURL += "&ref=" + encodeURI(url);
-                chrome.tabs.create({"url": createURL});
             })
         })
     };

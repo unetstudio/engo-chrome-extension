@@ -1,13 +1,13 @@
 // Set up the context menus
 chrome.contextMenus.create({
-    "title": "Engo Dictionary",
-    "contexts": ["page", "selection", "image", "link"],
+    "title": "Engo Pro",
+    "contexts": ["page", "selection"],
     "onclick": function (e) {
         let url = e.pageUrl;
         let createURL = "https://engo.pro/words/create?q=";
-
-        if (e.selectionText) {
-            createURL += encodeURI(e.selectionText)
+        const selectionText = e.selectionText
+        if (selectionText) {
+            createURL += encodeURI(selectionText)
         }
 
         createURL += "&ref=" + encodeURI(url);
