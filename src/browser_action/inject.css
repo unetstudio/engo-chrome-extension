@@ -121,23 +121,3 @@ body.engo-app {
     color: #5794ff;
     text-decoration: none
 }
-
-.engo-app .link-login a svg {
-    margin-bottom: -2px;
-}
-
-.engo-app a#create-all span {
-
-}
-
-.engo-app a#create-select span {
-
-}
-
-.engo-app a#option span {
-
-}
-
-.engo-app a#feedback span {
-
-}

@@ -1,16 +1,22 @@
-// Set up the context menus
+/**
+ * Context menu
+ * @type {string}
+ */
+let createURL = ENGOPRO.URL + "words/create?q=";
+
 chrome.contextMenus.create({
-    "title": "Engo Pro",
+    "title": ENGOPRO.NAME,
     "contexts": ["page", "selection"],
     "onclick": function (e) {
         let url = e.pageUrl;
-        let createURL = "https://engo.pro/words/create?q=";
-        const selectionText = e.selectionText
+        let selectionText = e.selectionText
         if (selectionText) {
             createURL += encodeURI(selectionText)
         }
 
         createURL += "&ref=" + encodeURI(url);
         chrome.tabs.create({"url": createURL});
+        url = ''
+        selectionText = ''
     }
 });
