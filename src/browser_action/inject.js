@@ -1,4 +1,3 @@
-
 /**
  * Handle link click
  */
@@ -21,6 +20,5 @@ function actionLink() {
  * DOMContentLoaded
  */
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("engopro-name").innerText = ENGOPRO.NAME
     actionLink()
 });

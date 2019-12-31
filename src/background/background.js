@@ -4,10 +4,10 @@
  */
 
 chrome.contextMenus.create({
-    "title": ENGOPRO.NAME,
+    "title": "Engo Pro",
     "contexts": ["page", "selection"],
     "onclick": function (e) {
-        const CREATE_URL = ENGOPRO.URL + "words/create?q=";
+        const CREATE_URL = "https://engo.pro/words/create?q=";
         const url = e.pageUrl;
         const host = new URL(url);
         const site = host.hostname;
