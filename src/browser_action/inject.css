@@ -18,7 +18,8 @@ body.engo-app {
 }
 
 .engo-app ul.vertical {
-    padding: 0
+    padding: 0;
+    margin-bottom: 10px;
 }
 
 .engo-app ul.horizontal li a {
