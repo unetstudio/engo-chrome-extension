@@ -2,7 +2,7 @@
   "name": "Engo Pro",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Engo Pro: ứng dụng tạo flash card học tiếng anh https://engo.pro",
+  "description": "Engo Pro: ứng dụng tạo flash card học tiếng anh.",
   "homepage_url": "https://engo.pro",
   "icons": {
     "16": "icons/icon16.png",
@@ -24,6 +24,7 @@
     "activeTab",
     "contextMenus"
   ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "content_scripts": [
     {
       "matches": [
