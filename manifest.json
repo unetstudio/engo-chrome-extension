@@ -20,8 +20,6 @@
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
-    "tabs",
-    "activeTab",
     "contextMenus"
   ],
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
