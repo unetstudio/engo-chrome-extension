@@ -1,3 +1,4 @@
+
 # Engo Pro Chrome Extension
 
 Engo is an application to create english flash card by your own content.
@@ -9,3 +10,5 @@ This extention will you collect content over the internet, then import it to the
 
 ## More info
 Website: https://engo.pro
+
+![screenshot](https://ducdh.com/wp-content/uploads/2020/02/menu.png)
